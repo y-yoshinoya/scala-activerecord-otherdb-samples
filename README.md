@@ -14,6 +14,7 @@ $ docker run --name mysql-server -e MYSQL_ROOT_PASSWORD=password -v /tmp/mysql/d
 $ docker exec -it mysql-server bash -c "echo 'CREATE DATABASE sampledb DEFAULT CHARACTER SET utf8;' | mysql -uroot -ppassword"
 $ docker run -it -p 9000:9000 --link mysql-server:db scala-activerecord-app-base bash -c \
   'cd /opt/apps/scala-activerecord-sample && \
+   git pull origin master && \
    bin/sbt -Ddb.activerecord.url="jdbc:mysql://${DB_PORT_3306_TCP_ADDR}:${DB_PORT_3306_TCP_PORT}/sampledb" \
   -Ddb.activerecord.driver=com.mysql.jdbc.Driver \
   -Ddb.activerecord.user=root \
@@ -32,6 +33,7 @@ $ docker run --name postgresql-server -e POSTGRES_USER=postgres -e POSTGRES_PASS
 $ docker exec -it postgresql-server bash -c "su - postgres -c 'createdb sampledb --locale=C --encoding=UTF8 --template=template0'"
 $ docker run -it -p 9000:9000 --link postgresql-server:db scala-activerecord-app-base bash -c \
   'cd /opt/apps/scala-activerecord-sample && \
+   git pull origin master && \
    bin/sbt -Ddb.activerecord.url="jdbc:postgresql://${DB_PORT_5432_TCP_ADDR}:${DB_PORT_5432_TCP_PORT}/sampledb" \
   -Ddb.activerecord.driver=org.postgresql.Driver \
   -Ddb.activerecord.user=postgres \
@@ -47,6 +49,7 @@ The application starts on http://localhost:9000.
 $ docker run --name oracle-server -d wnameless/oracle-xe-11g
 $ docker run -it -p 9000:9000 --link oracle-server:db scala-activerecord-app-base bash -c \
   'cd /opt/apps/scala-activerecord-sample && \
+   git pull origin master && \
    rm -rf play2x/conf/evolutions && \
    bin/sbt -Ddb.activerecord.url="jdbc:oracle:thin:@${DB_PORT_1521_TCP_ADDR}:${DB_PORT_1521_TCP_PORT}:XE" \
   -Ddb.activerecord.driver=oracle.jdbc.OracleDriver \
