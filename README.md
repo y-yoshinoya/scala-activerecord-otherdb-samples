@@ -41,7 +41,6 @@ $ docker run -it -p 9000:9000 --link postgresql-server:db scala-activerecord-app
 ## Oracle 11g Release 2 (11.2)
 
 ```sh
-$ mkdir -p /tmp/oracle/data
 $ docker run --name oracle-server -d wnameless/oracle-xe-11g
 $ docker run -it -p 9000:9000 --link oracle-server:db scala-activerecord-app-base bash -c \
   'cd /opt/apps/scala-activerecord-sample && \
