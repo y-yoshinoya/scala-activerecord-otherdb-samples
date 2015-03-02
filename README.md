@@ -1,10 +1,10 @@
 # Scala ActiveRecord integration test
 
-Required Docker version 1.5 or greater.
+> **Note :** Required Docker version 1.5 or greater.
 
-## Prepare
+## Preparing
 
-```
+```sh
 $ docker build -t scala-activerecord-app-base -f Dockerfile.base .
 ```
 
