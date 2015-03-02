@@ -1,11 +1,9 @@
 # Scala ActiveRecord integration test
 
-> **Note :** Required Docker version 1.5 or greater.
-
 ## Preparing
 
 ```sh
-$ docker build -t scala-activerecord-app-base -f Dockerfile.base .
+$ docker build -t scala-activerecord-app-base .
 ```
 
 ## MySQL 5.6
