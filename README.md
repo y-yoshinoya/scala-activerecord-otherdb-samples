@@ -21,6 +21,9 @@ $ docker run -it -p 9000:9000 --link mysql-server:db scala-activerecord-app-base
   run'
 ```
 
+The application starts on http://localhost:9000.
+
+
 ## PostgreSQL 9.4
 
 ```sh
@@ -36,6 +39,8 @@ $ docker run -it -p 9000:9000 --link postgresql-server:db scala-activerecord-app
   run'
 ```
 
+The application starts on http://localhost:9000.
+
 ## Oracle 11g Release 2 (11.2)
 
 ```sh
@@ -49,3 +54,6 @@ $ docker run -it -p 9000:9000 --link oracle-server:db scala-activerecord-app-bas
   -Ddb.activerecord.password=oracle \
   run'
 ```
+
+The application starts on http://localhost:9000.
+
